@@ -1,0 +1,20 @@
+{
+  "name": "centennialstockmarket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "devStart": " nodemon app.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "airtable": "^0.11.2",
+    "dayjs": "^1.10.7",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "node-fetch": "^3.2.0",
+    "nodemon": "^2.0.15"
+  }
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Stock Market</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="xom">
+             <h1 id="symbol_xom"></h1>
+             <h3 id="xom_open"></h3>
+             <h3 id="xom_high"></h3>
+             <h3 id="xom_low"></h3>
+             <h3 id="xom_close"></h3>
+             <h3 id="xom_from"></h3>
+
+        </div>
+        <div class="rio">
+            <h1 id="symbol_rio"></h1>
+            <h3 id="rio_open"></h3>
+            <h3 id="rio_high"></h3>
+            <h3 id="rio_low"></h3>
+            <h3 id="rio_close"></h3>
+            <h3 id="rio_from"></h3>
+            
+         </div>
+        <div class="shlx">
+            <h1 id="symbol_shlx"></h1>
+            <h3 id="shlx_open"></h3>
+            <h3 id="shlx_high"></h3>
+            <h3 id="shlx_low"></h3>
+            <h3 id="shlx_close"></h3>
+            <h3 id="shlx_from"></h3>
+            
+        </div>
+        <div class="pypl">
+            <h1 id="symbol_pypl"></h1>
+            <h3 id="pypl_open"></h3>
+            <h3 id="pypl_high"></h3>
+            <h3 id="pypl_low"></h3>
+            <h3 id="pypl_close"></h3>
+            <h3 id="pypl_from"></h3>
+    
+        </div>
+        <div class="rivn">
+            <h1 id="symbol_rivn"></h1>
+            <h3 id="rivn_open"></h3>
+            <h3 id="rivn_high"></h3>
+            <h3 id="rivn_low"></h3>
+            <h3 id="rivn_close"></h3>
+            <h3 id="rivn_from"></h3>
+    
+        </div>
+
+    </div>
+
+
+    <script>
+        const symbol = document.getElementById("symbol_xom")
+        const open = document.getElementById("xom_open")
+        const high = document.getElementById("xom_high")
+        const low = document.getElementById("xom_low")
+        const close = document.getElementById("xom_close")
+        const from = document.getElementById("xom_from")
+
+        const rio_symbol = document.getElementById("symbol_rio")
+        const rio_open = document.getElementById("rio_open")
+        const rio_high = document.getElementById("rio_high")
+        const rio_low = document.getElementById("rio_low")
+        const rio_close = document.getElementById("rio_close")
+        const rio_from = document.getElementById("rio_from")
+
+        const shlx_symbol = document.getElementById("symbol_shlx")
+        const shlx_open = document.getElementById("shlx_open")
+        const shlx_high = document.getElementById("shlx_high")
+        const shlx_low = document.getElementById("shlx_low")
+        const shlx_close = document.getElementById("shlx_close")
+        const shlx_from = document.getElementById("shlx_from")
+
+        const pypl_symbol = document.getElementById("symbol_pypl")
+        const pypl_open = document.getElementById("pypl_open")
+        const pypl_high = document.getElementById("pypl_high")
+        const pypl_low = document.getElementById("pypl_low")
+        const pypl_close = document.getElementById("pypl_close")
+        const pypl_from = document.getElementById("pypl_from")
+
+        const rivn_symbol = document.getElementById("symbol_rivn")
+        const rivn_open = document.getElementById("rivn_open")
+        const rivn_high = document.getElementById("rivn_high")
+        const rivn_low = document.getElementById("rivn_low")
+        const rivn_close = document.getElementById("rivn_close")
+        const rivn_from = document.getElementById("rivn_from")
+
+
+
+        const xomData = '/xomapi'
+        const rioData = '/rioapi'
+        const shlxData = '/shlxapi'
+        const pyplData = '/pyplxapi'
+        const rivnData = '/rivnxapi'
+
+        const xompubdata = async() =>{
+          const data = await fetch(xomData)
+          const pubData = await data.json()
+
+          symbol.textContent = pubData.symbol
+          open.textContent = pubData.open
+          high.textContent = pubData.high
+          low.textContent = pubData.low
+          close.textContent = pubData.close
+          from.textContent = pubData.from
+        }
+
+        const riopubdata = async() =>{
+          const data = await fetch(rioData)
+          const pubData = await data.json()
+          
+
+          rio_symbol.textContent = pubData.symbol
+          rio_open.textContent = pubData.open
+          rio_high.textContent = pubData.high
+          rio_low.textContent = pubData.low
+          rio_close.textContent = pubData.close
+          rio_from.textContent = pubData.from
+        }
+
+        const shlxpubdata = async() =>{
+          const data = await fetch(shlxData)
+          const pubData = await data.json()
+          
+
+          shlx_symbol.textContent = pubData.symbol
+          shlx_open.textContent = pubData.open
+          shlx_high.textContent = pubData.high
+          shlx_low.textContent = pubData.low
+          shlx_close.textContent = pubData.close
+          shlx_from.textContent = pubData.from
+        }
+
+        const pyplpubdata = async() =>{
+          const data = await fetch(pyplData)
+          const pubData = await data.json()
+         
+
+          pypl_symbol.textContent = pubData.symbol
+          pypl_open.textContent = pubData.open
+          pypl_high.textContent = pubData.high
+          pypl_low.textContent = pubData.low
+          pypl_close.textContent = pubData.close
+          pypl_from.textContent = pubData.from
+        }
+        const rivnpubdata = async() =>{
+          const data = await fetch(rivnData)
+          const pubData = await data.json()
+        
+
+          rivn_symbol.textContent = pubData.symbol
+          rivn_open.textContent = pubData.open
+          rivn_high.textContent = pubData.high
+          rivn_low.textContent = pubData.low
+          rivn_close.textContent = pubData.close
+          rivn_from.textContent = pubData.from
+        }
+
+        
+
+        xompubdata()
+        riopubdata()
+        shlxpubdata()
+        pyplpubdata()
+        rivnpubdata()
+    </script>
+    
+</body>
+</html>
