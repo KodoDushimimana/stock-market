@@ -6,7 +6,7 @@ import 'dotenv/config'
 
 const app = express()
 app.use(express.static('public'))
-const PORT = 3000
+const PORT = process.env.PORT
 
 const stockMarket = process.env.STOCK_API
 const airtable_api = process.env.AIRTABLE_KEY
