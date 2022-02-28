@@ -6,13 +6,13 @@ import 'dotenv/config'
 
 const app = express()
 app.use(express.static('public'))
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000
 
 const stockMarket = process.env.STOCK_API
 const airtable_api = process.env.AIRTABLE_KEY
 const base = new Airtable({apiKey: `${airtable_api}`}).base('appkAFcXYmg8XNqMD');
 const day = '2022-02-18'
-const yesterday = dayjs().add(-6, 'day').format("YYYY-MM-DD", "America/New_York")
+const yesterday = dayjs().add(-1, 'day').format("YYYY-MM-DD", "America/New_York")
 console.log(yesterday)
 
 const xom_data = `https://api.polygon.io/v1/open-close/XOM/${yesterday}?adjusted=true&apiKey=${stockMarket}`
