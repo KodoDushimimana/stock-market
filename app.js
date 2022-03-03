@@ -61,7 +61,7 @@ app.get('/xomapi', (req, res) =>{
     }
 
    
-    cron.schedule('0 0 * * *', () =>{
+    cron.schedule('*/30 * * * *', () =>{
       return  updateXom()      
     })
     
@@ -107,7 +107,7 @@ app.get('/rioapi', async(req, res) =>{
       });
     }
 
-    cron.schedule('0 0 * * *', () =>{
+    cron.schedule('*/30 * * * *', () =>{
      return rioUpdate()      
     })
    
@@ -151,7 +151,7 @@ app.get('/shlxapi', (req, res) =>{
       });
     }
   
-    cron.schedule('0 0 * * *', () =>{
+    cron.schedule('*/30 * * * *', () =>{
      return shlxUpdate()      
     })
 
@@ -194,7 +194,7 @@ app.get('/pyplxapi', (req, res) =>{
       });
     }
     
-    cron.schedule('0 0 * * *', () =>{
+    cron.schedule('*/30 * * * *', () =>{
       return pyplUpdate()      
     })
 
@@ -234,7 +234,7 @@ app.get('/rivnxapi', (req, res) =>{
       });
     }
      
-        cron.schedule('0 0 * * *', (err) =>{                 
+        cron.schedule('*/30 * * * *', (err) =>{                 
            return updateRivn()         
             
           })
